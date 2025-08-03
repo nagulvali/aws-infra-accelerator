@@ -10,9 +10,9 @@ repos:
     rev: v0.17.0
     hooks:
       - id: terraform-docs-system
-        name: terraform-docs per module README
+        name: terraform-docs per module
         language: system
-        entry: bash -c 'for file in "$@"; do dir=$(dirname "$file"); if [ -d "$dir" ]; then (cd "$dir" && terraform-docs markdown table --output-file=README.md --output-mode=replace .); fi; done'
+        entry: bash -c 'for file in "$@"; do echo "$(dirname "$file")"; done | sort -u | while read dir; do cd "$dir" && terraform-docs markdown table --output-file=README.md --output-mode=replace .; done'
         pass_filenames: true
         types: [terraform]
         files: ^modules/.*/(main|variables|outputs)\.tf$
