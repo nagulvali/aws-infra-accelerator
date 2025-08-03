@@ -1,13 +1,13 @@
 .PHONY: init plan apply destroy
 
 init:
-	cd envs/dev && terraform init
+	cd envs/sandbox && terraform init
 
 plan:
-	cd envs/dev && terraform plan
+	cd envs/sandbox && terraform plan
 
 apply:
-	cd envs/dev && terraform apply -auto-approve
+	cd envs/sandbox && terraform apply -auto-approve
 
 destroy:
-	cd envs/dev && terraform destroy -auto-approve
+	cd envs/sandbox && terraform destroy -auto-approve
