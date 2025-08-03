@@ -21,12 +21,6 @@ crash.log
 **/*.auto.tfvars
 **/*.auto.tfvars.json
 
-# Allow example files back in
-!**/example.tfvars
-!**/example.tfvars.json
-!**/example.auto.tfvars
-!**/example.auto.tfvars.json
-
 # macOS
 .DS_Store
 
