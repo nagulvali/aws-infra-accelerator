@@ -15,12 +15,6 @@ crash.log
 # Backup files
 *.backup
 
-# Ignore tfvars in any subdirectory
-**/*.tfvars
-**/*.tfvars.json
-**/*.auto.tfvars
-**/*.auto.tfvars.json
-
 # macOS
 .DS_Store
 
