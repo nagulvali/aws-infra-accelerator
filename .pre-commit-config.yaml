@@ -10,7 +10,9 @@ repos:
     rev: v0.17.0
     hooks:
       - id: terraform-docs-system
-        args:
-          - "--output-file=README.md"
-          - "--output-mode=replace"
+        name: terraform-docs per module README
+        language: system
+        entry: bash -c 'for file in "$@"; do dir=$(dirname "$file"); if [ -d "$dir" ]; then (cd "$dir" && terraform-docs markdown table --output-file=README.md --output-mode=replace .); fi; done'
+        pass_filenames: true
+        types: [terraform]
         files: ^modules/.*/(main|variables|outputs)\.tf$
